@@ -4,7 +4,7 @@ defmodule ORY.Hydra.MixProject do
   def project do
     [
       app: :ory_hydra,
-      version: "1.2.2",
+      version: "1.3.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -22,6 +22,7 @@ defmodule ORY.Hydra.MixProject do
   defp deps do
     [
       { :hackney, "~> 1.15", optional: true },
+      { :req, "~> 0.3", optional: true },
 
       { :jason, "~> 1.1", optional: true },
 
@@ -29,7 +30,7 @@ defmodule ORY.Hydra.MixProject do
       # dev
       #
 
-      { :dialyxir, "~> 1.2.0", only: :dev, runtime: false },
+      { :dialyxir, "~> 1.3.0", only: :dev, runtime: false },
 
       { :ex_doc, ">= 0.0.0", only: :dev, runtime: false },
 
