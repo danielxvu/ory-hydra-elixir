@@ -9,7 +9,13 @@ defmodule ORY.Hydra.Client.Req do
           any
         ) :: { :ok, ORY.Hydra.Client.response_t() } | { :error, any }
   def request(method, url, headers, body, _opts) do
-    req = Req.new(method: method, url: url, headers: headers, body: body) |> Req.request()
+    req = Req.new(
+      method: method,
+      url: url,
+      headers: headers,
+      body: body,
+      decode_body: false # This is already handled elsewhere
+    ) |> Req.request()
 
     package(req)
   end
